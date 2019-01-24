@@ -5,6 +5,10 @@ CC_FLAGS = -fopenmp -O3 -DBOFFSET=12
 intel:CC=icc -mmic -DMIC_NATIVE
 intel:CC_FLAGS=-qopenmp -DBOFFSET=12
 
+armv8:CC=aarch64-linux-gnu-gcc
+armv8:CC_FLAGS=-O3 -static -fopenmp
+
+armv8:dgemm_gen dgemm_check dgemm_err_inj dgemm_timing genMatrices
 
 general: dgemm_gen dgemm_check dgemm_err_inj dgemm_timing genMatrices
 
